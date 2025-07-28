@@ -37,11 +37,11 @@ namespace QuanLyBanHang
             dgvHangHoa.DataSource = tblHH;
             dgvHangHoa.Columns[0].HeaderText = "Mã hàng";
             dgvHangHoa.Columns[1].HeaderText = "Tên hàng";
-            dgvHangHoa.Columns[3].HeaderText = "Số lượng";
-            dgvHangHoa.Columns[4].HeaderText = "Đơn giá nhập";
-            dgvHangHoa.Columns[5].HeaderText = "Đơn giá bán";
-            dgvHangHoa.Columns[6].HeaderText = "Ảnh";
-            dgvHangHoa.Columns[7].HeaderText = "Ghi chú";
+            dgvHangHoa.Columns[2].HeaderText = "Số lượng";
+            dgvHangHoa.Columns[3].HeaderText = "Đơn giá nhập";
+            dgvHangHoa.Columns[4].HeaderText = "Đơn giá bán";
+            dgvHangHoa.Columns[5].HeaderText = "Ảnh";
+            dgvHangHoa.Columns[6].HeaderText = "Ghi chú";
             dgvHangHoa.Columns[0].Width = 80;
             dgvHangHoa.Columns[1].Width = 140;
             dgvHangHoa.Columns[2].Width = 80;
@@ -49,7 +49,6 @@ namespace QuanLyBanHang
             dgvHangHoa.Columns[4].Width = 100;
             dgvHangHoa.Columns[5].Width = 100;
             dgvHangHoa.Columns[6].Width = 200;
-            dgvHangHoa.Columns[7].Width = 300;
             dgvHangHoa.AllowUserToAddRows = false;
             dgvHangHoa.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -76,7 +75,6 @@ namespace QuanLyBanHang
 
         private void dgvHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string MaChatLieu;
             string sql;
             if (btnThem.Enabled == false)
             {
@@ -91,8 +89,6 @@ namespace QuanLyBanHang
             }
             txtMaHang.Text = dgvHangHoa.CurrentRow.Cells["MaHang"].Value.ToString();
             txtTenHang.Text = dgvHangHoa.CurrentRow.Cells["TenHang"].Value.ToString();
-            MaChatLieu = dgvHangHoa.CurrentRow.Cells["MaChatLieu"].Value.ToString();
-            sql = "SELECT TenChatLieu FROM tblChatLieu WHERE MaChatLieu=N'" + MaChatLieu + "'";
             txtSoLuong.Text = dgvHangHoa.CurrentRow.Cells["SoLuong"].Value.ToString();
             txtDonGiaNhap.Text = dgvHangHoa.CurrentRow.Cells["DonGiaNhap"].Value.ToString();
             txtDonGiaBan.Text = dgvHangHoa.CurrentRow.Cells["DonGiaBan"].Value.ToString();
@@ -149,7 +145,7 @@ namespace QuanLyBanHang
                 txtMaHang.Focus();
                 return;
             }
-            sql = "INSERT INTO tblHang(MaHang,TenHang,,SoLuong,DonGiaNhap, DonGiaBan,Anh,Ghichu) VALUES(N'"
+            sql = "INSERT INTO tblHang(MaHang,TenHang,SoLuong,DonGiaNhap, DonGiaBan,Anh,Ghichu) VALUES(N'"
                 + txtMaHang.Text.Trim() + "',N'" + txtTenHang.Text.Trim() +
                 "'," + txtSoLuong.Text.Trim() + "," + txtDonGiaNhap.Text +
                 "," + txtDonGiaBan.Text + ",'" + txtAnh.Text + "',N'" + txtGhiChu.Text.Trim() + "')";
@@ -272,7 +268,7 @@ namespace QuanLyBanHang
         private void btnHienThiDS_Click(object sender, EventArgs e)
         {
             string sql;
-            sql = "SELECT MaHang,TenHang,MaChatLieu,SoLuong,DonGiaNhap,DonGiaBan,Anh,Ghichu FROM tblHang";
+            sql = "SELECT MaHang,TenHang,SoLuong,DonGiaNhap,DonGiaBan,Anh,Ghichu FROM tblHang";
             tblHH = Functions.GetDataToTable(sql);
             dgvHangHoa.DataSource = tblHH;
         }
