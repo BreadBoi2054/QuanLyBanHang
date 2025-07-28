@@ -17,7 +17,7 @@ namespace QuanLyBanHang.Class
         public static void Connect()
         {
             conn = new SqlConnection();
-            conn.ConnectionString = Properties.Settings.Default.QuanLyBanHang;
+            conn.ConnectionString = Properties.Settings.Default.QuanLyCuaHangBanMayTinh;
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open(); //Mở kết nối

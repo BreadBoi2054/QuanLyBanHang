@@ -12,7 +12,7 @@ namespace QuanLyBanHang.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.13.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.14.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,11 +26,11 @@ namespace QuanLyBanHang.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=QuanLyBanHang;Persist Security Info=True;Us" +
-            "er ID=sa;Password=123456;TrustServerCertificate=True")]
-        public string QuanLyBanHang {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=QuanLyCuaHangBanMayTinh;Persist Security In" +
+            "fo=True;User ID=sa;Password=123456;TrustServerCertificate=True")]
+        public string QuanLyCuaHangBanMayTinh {
             get {
-                return ((string)(this["QuanLyBanHang"]));
+                return ((string)(this["QuanLyCuaHangBanMayTinh"]));
             }
         }
     }
